@@ -1,0 +1,1658 @@
+html {
+	 scroll-behavior: smooth;
+}
+
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+  font-family: GroteskBold;
+  src: url('NeueHaasGroteskBold.ttf');
+}
+
+@font-face {
+  font-family: GroteskRegular;
+  src: url('NeueHaasGroteskRegular.ttf');
+}
+@font-face {
+  font-family: Against;
+  src: url('against regular.ttf');
+}
+
+body {
+	position: relative;
+	overflow-x: hidden;
+	background-color: #F8F8FF;
+	margin: 0;
+}
+
+.container {
+	z-index: 5;
+	height: 100%;
+	width: 100vw;
+	margin: 0 auto;
+	position: relative;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow-x: hidden;
+}
+
+/*Shortcuts*/
+
+.list-style-none {
+	list-style-type: none;
+}
+
+.flexify {
+	display: flex;
+}
+
+.text-decoration-none {
+	text-decoration: none;
+}
+
+.uppercase-txt-transform {
+	text-transform: uppercase;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.color-gold {
+	color: #d4af37;
+}
+
+.font-groteskr {
+	font-family: GroteskRegular;
+}
+
+.font-against {
+	font-family: Against;
+}
+
+.font-grotesk-bold {
+	font-family: GroteskBold;
+}
+.no-scroll {
+	overflow: hidden;
+}
+
+/*Shortcuts*/
+
+.index-hero-section {
+	z-index: -3;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	flex-direction: column;
+	background-color: #264233;
+	justify-content: space-between;
+}
+
+nav {
+   width: 90%;
+   height: 12%;
+   color: #F8F8FF;
+   letter-spacing: 0.9px;
+   justify-content: space-between;
+}
+
+.logo {
+	font-size: 16px;
+	letter-spacing: 0px;
+	color: white;
+}
+
+.logo span {
+	letter-spacing: 1.5px;
+	font-size: 19px;
+}
+
+.logo:hover {
+	opacity: 0.9;
+}
+
+.nav-links {
+	width: 50%;
+	height: 50%;
+	justify-content: center;
+}
+
+nav a {
+	color: white;
+	font-size: 17.5px;
+	position: relative;
+	letter-spacing: 2.5px;
+}
+
+nav a:not(.Get-Started-btn,.logo)::before {
+  content: "";
+  left: 0;
+  top: 100%;
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  background-color: #F8F8FF;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+
+nav a:hover:before {
+  transform: scaleX(1);
+  transform-origin: center;
+}
+
+.nav-links ul {
+	width: 100%;
+	height: 100%;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.account {
+	gap: 10px;
+	justify-content: center;
+}
+
+.Get-Started-btn {
+  color: #264233;
+  transition: .5s;
+  padding: 10px 8px;
+	border-radius: 10px;
+	background-color: #F8F8FF;
+	border: 2px solid #F8F8FF;
+}
+
+.Get-Started-btn:hover {
+	color: #F8F8FF;
+	background-color: transparent;
+}
+/* Hamburger Menu */
+
+.Hamburger-Menu {
+	display: none;
+	width: 90%;
+	height: 100px;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	position: relative; 
+}
+
+.Hamburger-Menu-Icon {
+	background-color: transparent;
+	border: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	width: 30px;
+	height: 20px;
+	cursor: pointer;
+	position: relative;
+	z-index: 101; 
+}
+
+.Hamburger-Menu-Icon span {
+	display: block;
+	width: 100%;
+	height: 3px;
+	background-color: white;
+	border-radius: 2px;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+
+.Hamburger-Menu-Icon.active span:nth-child(1) {
+	transform: rotate(50deg) translate(6px, 6px);
+}
+
+.Hamburger-Menu-Icon.active span:nth-child(2) {
+	opacity: 0; 
+}
+
+.Hamburger-Menu-Icon.active span:nth-child(3) {
+	transform: rotate(-50deg) translate(6px, -6px);
+}
+
+.Hamburger-Dropdown {
+	position: fixed; 
+	top: -100%; 
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #264233;
+	display: flex;
+	flex-direction: column;
+	padding-top: 80px;
+	padding-left: 30px;
+	transition: top 0.5s ease; 
+	z-index: 100;
+	overflow: hidden;
+	border-bottom: 3px white solid;
+}
+
+.Hamburger-Dropdown.active {
+	top: 0; 
+}
+
+.Hamburger-Dropdown hr {
+	width: 90%;
+	height: 2px;
+}
+
+.menu-link {
+	color: #D3D3D3;
+	font-size: 16px;
+	text-decoration: none;
+	margin: 15px 0;
+	transition: color 0.3s ease; 
+}
+
+.menu-link:hover {
+	color: white;
+}
+
+.menu-title {
+	color: white;
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+
+
+/* hero layout*/
+
+.hero-layouts {
+	width: 100%;
+	height: 100%;
+}
+
+.hero-first-layout {
+ 	width: 65%;
+	height: 100%;
+	color: #F8F8FF;
+	align-items: flex-end;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.hero-title {
+	height: 45%;
+	width: 90%;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 15px;
+}
+
+.hero-title h3 {
+	font-size: 65px;
+	letter-spacing: 1px;
+}
+
+.hero-title p {
+	font-size: 18px;
+	margin-left: 5px;
+	letter-spacing: 1px;
+}
+
+.hero-btn {
+	z-index: 1;
+	height: 60px;
+	width: 200px;
+	margin-top: 5px;
+	position: relative;
+	border-radius: 50px;
+	border: 1px solid #F8F8FF;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.hero-btn-text {
+		position: absolute;
+		left: 30%;
+		z-index: 3;
+		width: 65%;
+		height: 100%;
+		color: #F8F8FF;
+		transition: .5s;
+		font-size: 17px;
+		line-height: 0.9;
+    padding-left: 15px;
+		letter-spacing: 4px;
+		font-weight: bold;
+}
+
+.hero-btn-circle {
+	position: absolute;
+	left: 2px;
+	z-index: 2;
+	width: 30%;
+	height: calc(100% - 4px);
+	border-radius: 30px;
+	background-color: #F8F8FF;
+	transition: .5s cubic-bezier(1,0,.5,1);
+}
+
+.hero-btn-arrow {
+	position: absolute;
+	left: 20px;
+	height: 15px;
+	width: 15px;
+	border-top: 3px solid #264233;
+	border-right: 3px solid #264233;
+	transform: rotate(45deg);
+	transition: .5s;
+}
+
+.hero-btn:hover .hero-btn-text {
+	color: #264233;
+	padding-left: 5px;
+}
+
+.hero-btn:hover .hero-btn-arrow {
+	left: 40px;
+}
+
+.hero-btn:hover .hero-btn-circle {
+	width:  calc(100% - 4px);
+}
+
+.hero-second-layout {
+	width: 35%;
+	height: 100%;
+	align-items: flex-end;
+	justify-content: flex-end;
+}
+
+.hero-img {
+	width: 95%;
+	height: 85%;
+	border-radius: 30px 0 0 0;
+	background-image: url('pexels-florent-dragusha-14192353.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+/* slider section*/
+
+.index-slider-section {
+  width: 100%;
+  display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+  padding: 25px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.index-slider-item {
+	position: relative;
+	border-radius: 50px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	justify-content: center;
+	z-index: 1;
+	aspect-ratio: 1 / 1;
+	overflow: hidden;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+.index-slider-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50px;
+	background: linear-gradient(to top, #000000 25%, transparent);
+	opacity: 0.7;
+	z-index: 10;
+}
+
+.index-slider-content {
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+	gap: 10px;
+	width: 80%;
+	height: 90%;
+	z-index: 15;
+	color: white;
+	margin-bottom: 10px;
+}
+
+.index-slider-content h4 {
+	font-size: 30px;
+	letter-spacing: 0px;
+	color: #F8F8FF;
+}
+
+.index-slider-content a {
+	text-decoration: none;
+	padding: 10px 20px;
+	border-radius: 50px;
+	border: none;
+  background-color: rgba(255, 255, 255, .3);
+  justify-content: center;
+  gap: 5px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.index-slider-content a:hover {
+	background-color: rgba(255, 255, 255, .2);
+}
+
+.index-slider-btn-txt {
+		color: #F8F8FF;
+		letter-spacing: 1.5px;
+		font-size: 16px;
+		font-weight: bold;
+}
+
+.index-slider-btn-arrow {
+	height: 7px;
+	width: 7px;
+	border-top: 1.5px solid #F8F8FF;
+	border-right: 1.5px solid #F8F8FF;
+	transform: rotate(45deg);
+}
+
+.index-slider-item:hover {
+  transform: scale(1.08);
+  opacity: 1;
+  z-index: 2;
+}
+
+.index-slider-item.dimmed {
+  transform: scale(0.95);
+  opacity: 0.9;
+}
+
+
+.index-slider-item-1 {
+	background-image: url('sunnyhill-img.jpeg');
+}
+
+.index-slider-item-2 {
+	background-image: url('L-Drini.jpeg');
+}
+
+.index-slider-item-3 {
+	background-image: url('artana.jpg');
+}
+
+.index-slider-item-4 {
+	background-image: url('culture.jpeg');
+}
+
+/* activities section */
+
+.index-activities-section {
+	width: 100%;
+	height: auto;
+	justify-content: center;
+	background-color: #264233;
+}
+
+.vertical-text-1 {
+  letter-spacing: 10px;
+}
+
+.vertical-text {
+	color: white;
+	width: 10%;
+	height: 100%;
+	font-size: 50px;
+	align-items: center;
+	justify-content: center;
+	writing-mode: vertical-rl;
+	text-orientation: upright;
+}
+
+.index-activities-layout {
+	width: 80%;
+	height: auto;
+	margin: 20px;
+	gap: 10px;
+	color: #264233;
+	align-items: center;
+	border-radius: 55px;
+	flex-direction: column;
+	justify-content: center;
+	background-color: #F8F8FF;
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+	padding: 20px;
+}
+
+.index-activities-row-1, .index-activities-row-2 {
+	gap: 20px;
+	width: 97%;
+	height: 49%;
+	display: grid;
+	grid-auto-rows: auto;
+}
+
+.index-activities-item {
+	height: 100%;
+	border-radius: 45px;
+	background-color: white;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.index-activities-row-1 {
+	grid-template-columns: 2fr 1fr;
+}
+
+.index-activities-row-2 {
+	grid-template-columns: 1fr 2fr;
+}
+
+.index-activities-design-2 {
+	gap: 5px;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.index-activities-design-2 a {
+	opacity: 1;
+	width: 90%;
+	height: 60%;
+	border-radius: 30px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: opacity .5s ease;
+	background-position: center center;
+	box-shadow: 0px 8px 24px -15px rgba(0,0,0,0.30);
+	aspect-ratio: 4 /3;
+}
+
+.index-activities-img-1 {
+	background-image: url('Dokufest-img.jpeg');
+}
+
+.index-activities-img-2 {
+	background-image: url('brezovica.jpg');
+}
+.index-activities-design-2 a:hover {
+	opacity: 0.9;
+}
+
+.index-activities-design-2 div {
+	gap: 10px;
+	width: 85%;
+	height: 30%;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.index-activities-design-2 h3 {
+	height: 30%;
+	font-size: 25px;
+}
+
+.index-activities-design-2 i {
+	width: auto;
+	height: 15%;
+	font-size: 15px;
+}
+
+.index-activities-design-2 ul {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	list-style-type: none;
+	width: 100%;
+	height: 35%;
+}
+
+.index-activities-design-2 ul li {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.index-activities-design-2 button {
+	color: #264233;
+	font-size: 14px;
+	border: 2px solid #264233;
+	background-color: transparent;
+	border-radius: 10px;
+	padding: 8px 5px;
+	transition: .5s ease-out;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.index-activities-design-2 button:hover {
+	background-color: #264233;
+	color: white;
+}
+
+.index-activities-design-1 {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1px;
+}
+
+.index-activities-img, .ix-activities-content-1 {
+	height: 90%;
+	width: 65%;
+	border-radius: 35px;
+}
+
+.index-activities-img {
+	opacity: 1;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: opacity .5s ease;
+	background-position: center center;
+	box-shadow: 0px 4px 24px -10px rgba(0,0,0,0.30);
+}
+
+.index-activities-img:hover {
+	opacity: 0.9;
+}
+
+.index-activities-img-3 {
+	background-image: url('Lake-liqenati.jpeg');
+}
+
+.index-activities-img-4 {
+	background-image: url('kosovo-hiking.jpeg');
+}
+
+.ix-activities-content-1 {
+	gap: 3px;
+	width: 30%;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.ix-activities-content-1 h3 {
+	height: 30%;
+	font-size: 30px;
+	margin-bottom: 3px;
+	text-align: center;
+}
+
+.ix-activities-content-1 i {
+	width: 100%;
+	height: 10%;
+	font-size: 15px;
+	text-align: center;
+}
+
+.ix-activities-content-1 ul {
+	gap: 10px;
+	width: 100%;
+	height: 20%;
+	align-items: center;
+	list-style-type: none;
+	flex-direction: column;
+}
+
+.ix-activities-content-1 ul li {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.ix-activities-content-1 button {
+	color: #264233;
+	font-size: 14px;
+	padding: 8px 5px;
+	border-radius: 10px;
+	transition: .5s ease-out;
+	border: 2px solid #264233;
+	background-color: transparent;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.ix-activities-content-1 button:hover {
+	color: white;
+	background-color: #264233;
+}
+
+/* destinations section */
+
+.index-destinations-section {
+  width: 100%;
+  height: 100vh;
+  color:  #264233;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.index-dest-title {
+  width: 90%;
+  height: 20%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.index-dest-title h1 {
+	font-size: 70px;
+}
+
+.index-dest-content {
+	width: 95%;
+	height: 75%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.index-dest-item {
+	width: 45%;
+	height: 85%;
+	background-color: white;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	flex-direction: column;
+	border-radius: 70px;
+	box-shadow: 0px 8px 24px -15px rgba(0,0,0,0.30);
+}
+
+.index-dest-item-img  {
+	display: block;
+	border-radius: 40px;
+	width: 90%;
+	height: 70%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	transition: opacity .5s ease;
+	background-position: center center;
+	box-shadow: 0px 8px 24px -15px rgba(0,0,0,0.30);
+	position: relative;
+}
+
+.index-dest-item-img::before {
+	content: "";
+	border-radius: 40px;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.05);
+}
+
+.index-dest-item-img:hover {
+	opacity: 0.9;
+}
+
+.index-dest-item-img-1 {
+	background-image: url('prizren.jpg');
+}
+
+.index-dest-item-img-2 {
+	background-image: url('rugova.jpg');
+}
+
+
+.index-dest-item p {
+	font-size: 22px;
+}
+
+.index-dest-item button {
+	color: #264233;
+	font-size: 16px;
+	border: 2px solid #264233;
+	background-color: transparent;
+	border-radius: 10px;
+	padding: 11px 15px;
+	transition: .5s ease-out;
+	cursor: pointer;
+	font-weight: bold;
+	box-shadow: 0px 8px 24px -15px rgba(0,0,0,0.30);
+}
+
+.index-dest-item button:hover {
+	background-color: #264233;
+	color: white;
+}
+
+/* History & Culture section */
+
+.ix-history-cult-section {
+	width: 100%;
+	height: 100vh;
+	flex-direction: row;
+	background-color: #264233;
+}
+
+.ix-cult-section-content {
+	width: 60%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	color: white;
+	gap: 50px;
+}
+
+.ix-cult-section-content h1 {
+	font-size: 60px;
+	text-align: center;
+	width: 85%;
+}
+
+.ix-cult-section-content div {
+	gap: 30px;
+}
+
+.ix-cult-section-content button {
+	color: white;
+	font-size: 18px;
+	border: 2px solid white;
+	background-color: transparent;
+	border-radius: 50px;
+	padding: 14px 24px;
+	transition: .5s ease-out;
+	font-weight: bold;
+	cursor: pointer;
+	box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.ix-cult-section-content button:hover {
+	color: #264233;
+	background-color: white;
+}
+
+.ix-cult-section-img {
+	width: 40%;
+	height: 100%;
+	background: url('culture.jpeg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+/* Pre-footer */
+
+.sub-footer {
+	width: 100%;
+	height: 30vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.sub-footer h1 {
+	font-size: 35px;
+	color: #264233;
+}
+
+/* footer section */
+
+.footer {
+	width: 100%;
+	height: 50vh;
+	background-color: #264233;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-structure {
+	align-items: center;
+	justify-content: space-between;
+	margin-right: 40px;
+	margin-left: 40px;
+}
+
+.footer-title {
+	width: 50%;
+	flex-direction: column;
+	color: white;
+}
+
+.footer-title h1 {
+	font-size: 80px;
+	text-transform: uppercase;
+}
+
+.footer-title p {
+	font-size: 19px;
+	letter-spacing: 1px;
+}
+
+.footer-content {
+	width: 50%;
+	width: auto;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 30px;
+}
+
+.search-container {
+	position: relative;
+	width: 100%;
+}
+
+.search-icon {
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: white;
+	font-size: 15px;
+	pointer-events: none; 
+}
+
+.search-bar {
+	width: 100%;
+	height: 50px;
+	border: 2px solid white;
+	border-radius: 30px;
+	background: transparent;
+	padding: 0 0px 0 45px;
+	color: white;
+	font-size: 16px;
+	outline: none;
+	transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.search-bar:focus {
+	border-color: #ffff; 
+	box-shadow: 0 0 5px #ffff, 0 0 5px #ffff; 
+}
+
+.search-bar::placeholder {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-content-elements {
+	gap: 10px;
+}
+
+.footer-content-elements span {
+	color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-content-elements a {
+    text-decoration: none;
+		color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-content-elements a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 35px;
+}
+
+.social-icons .icon {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+
+.social-icons .icon:hover {
+    color: #d4af37;
+}
+
+.copyright {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* Responsive style */
+
+@media (max-width: 1345px) {
+
+  /* Culture and History Responsive */
+
+  .ix-cult-section-content h1 {
+	font-size: 50px;
+	max-width: 80%;
+	width: fit-content;
+  }
+
+}
+
+@media (max-width: 1300px) {
+
+   /* Card Responsive */
+
+  .index-slider-item {
+  	aspect-ratio: 6 / 7;
+  }
+
+  .index-slider-content h4 {
+  	font-size: 25px;
+  }
+
+}
+
+@media (max-width: 1200px) {
+
+   /* hero responsive */
+
+  .hero-first-layout {
+  	width: 60%;
+  }
+
+  .hero-title {
+  	gap: 10px;
+  }
+
+  .hero-title h3 {
+  	font-size: 55px;
+  }
+
+  .hero-title p {
+  	font-size: 17px;
+  }
+
+     .hero-btn {
+        height: 55px; 
+        width: 180px;
+    }
+
+    .hero-btn-text {
+        font-size: 15px; 
+        left: 28%;
+        width: 62%; 
+    }
+
+    .hero-btn-circle {
+        width: 28%; 
+    }
+
+    .hero-btn-arrow {
+        left: 18px;
+        height: 13px; 
+        width: 13px;
+        border-top: 2.5px solid #264233; 
+        border-right: 2.5px solid #264233;
+    }
+
+    .hero-btn:hover .hero-btn-arrow {
+		left: 35px;
+	}
+
+  .hero-second-layout {
+  	width: 40%;
+  }
+
+
+  /* Card Responsive */
+
+  .index-slider-item {
+  	aspect-ratio: 3 / 4;
+  }
+
+  .index-slider-content h4 {
+  	font-size: 25px;
+  }
+
+  /* Culture and History Responsive */
+
+  .ix-cult-section-content h1 {
+	font-size: 45px;
+  }
+
+  /* Sub Footer */
+
+  .footer-structure {
+	align-items: center;
+	justify-content: space-around;
+   }
+
+  .sub-footer h1 {
+  	font-size: 30px;
+  }
+
+  /* Footer */
+
+  .footer-title h1 {
+	font-size: 75px;
+   }
+
+   .footer-title p {
+	font-size: 18px;
+	}
+
+}	
+
+@media (max-width: 1080px) {
+  /* hero responsive */
+
+  .hero-first-layout {
+  	width: 55%;
+  }
+
+  .hero-title {
+  	gap: 15px;
+  }
+
+  .hero-title h3 {
+  	font-size: 45px;
+  }
+
+  .hero-title p {
+  	font-size: 15px;
+  }
+
+     .hero-btn {
+        height: 50px; 
+        width: 170px;
+    }
+
+    .hero-btn-text {
+        font-size: 14px; 
+    }
+
+    .hero-btn-arrow {
+        left: 16px; 
+        height: 12px; 
+        width: 12px;
+    }
+
+    .hero-btn:hover .hero-btn-arrow {
+		left: 30px;
+	}
+
+  .hero-second-layout {
+  	width: 45%;
+  }
+
+   /* Card Responsive */
+
+  .index-slider-item {
+  	aspect-ratio: 2 / 3;
+  }
+
+  .index-slider-content h4 {
+  	font-size: 23px;
+  }
+
+  /*Activities responsive*/
+  .index-activities-design-2 div {
+		gap: 8px;
+	}
+
+  .ix-activities-content-1 button {
+  	font-size: 12px;
+  }
+
+  .index-activities-design-2 button {
+  	font-size: 12px;
+  	padding: 7px 4px;
+  }
+
+  .index-activities-design-2 div {
+  	height: 30%;
+  	width: 80%;
+  }
+
+  .ix-activities-content-1 h3 {
+  	font-size: 25px;
+  }
+
+  .index-activities-design-2 h3 {
+	font-size: 20px;
+  }
+
+  .index-activities-design-2 i {
+	font-size: 13px;
+  }
+
+  .ix-activities-content-1 i {
+  	font-size: 13px;
+  }
+
+  /* Culture and History Responsive */
+  .index-slider-section {
+  	height: ;
+  }
+
+  .ix-cult-section-content {
+	width: 55%;
+  }
+
+  .ix-cult-section-img {
+	width: 45%;
+  }
+
+  .ix-cult-section-content h1 {
+  	max-width: 95%;
+  }
+
+
+  /* Destinations responsive */
+
+  .index-dest-title h1 {
+  	font-size: 55px;
+  }
+
+  .index-dest-item {
+  	height: 75%;
+  }
+
+  .index-dest-item-img {
+  	height: 65%;
+  }
+ 
+}	
+
+@media (max-width: 990px) {
+  .hero-title {
+  	justify-content: center;
+  	gap: 15px;
+  }
+
+  nav a {
+  	font-size: 15px;
+  }
+
+  .Get-Started-btn {
+  	padding: 8px 6px;
+  }
+
+  .hero-title h3 {
+  	font-size: 40px;
+  }
+
+     .hero-btn {
+        height: 45px; 
+        width: 150px;
+    }
+
+    .hero-btn-text {
+        font-size: 12px; 
+        left: 25%;
+    }
+
+    .hero-btn-arrow {
+        left: 15px; 
+        height: 10px; 
+        width: 10px;
+    }
+
+    .hero-btn:hover .hero-btn-arrow {
+		left: 20px;
+	}
+
+  /* Card Responsive */
+
+  .index-slider-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* or auto-fit */
+  gap: 25px;
+  padding: 25px;
+}
+  .index-slider-content h4 {
+  	font-size: 21px;
+  }
+
+  /* Activities */
+  .index-activities-row-1, .index-activities-row-2 {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.index-activities-design-1 {
+		gap: 5px;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+	}
+
+	.index-activities-img {
+		width: 90%;
+		height: 60%;
+		border-radius: 30px;
+		aspect-ratio: 4 /3;
+	}
+
+	.index-activities-design-2 a {
+		width: 90%;
+		height: 60%;
+	}
+
+	.row-verse-dk {
+			flex-direction: column-reverse;
+	}
+	.ix-activities-content-1 {
+		gap: 10px;
+		width: 85%;
+		height: 30%;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+	}
+
+	.ix-activities-content-1 h3 {
+		height: 30%;
+		font-size: 25px;
+	}
+
+	.ix-activities-content-1 i {
+	  width: auto;
+		height: 15%;
+		font-size: 15px;
+	}
+
+.ix-activities-content-1 ul {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	list-style-type: none;
+	width: 100%;
+	height: 35%;
+}
+
+	.index-activities-design-2 div {
+		gap: 10px;
+		width: 85%;
+		height: 30%;
+	}
+
+  .index-activities-design-2 button {
+  	font-size: 14px;
+  	padding: 8px 5px;
+  }
+
+  .index-activities-design-2 h3 {
+		font-size: 25px;
+  }
+
+  .index-activities-design-2 i {
+	font-size: 15px;
+  }
+
+
+   /* Sub Footer */
+
+  .sub-footer h1 {
+  	font-size: 25px;
+  }
+
+  /* footer */
+  
+  .footer-structure {
+  	flex-direction: column;
+  	justify-content: center;
+  	margin: 0;
+  	gap: 30px;
+  }
+
+  .footer-title {
+	width: 100%;
+	gap: 15px;
+  }
+
+  .footer-title h1 {
+  	font-size: 40px;
+  }
+
+  .footer-title p {
+  	font-size: 16px;
+  	text-align: center;
+  }
+
+   /* Culture and History Responsive */
+
+  .ix-cult-section-content h1 {
+  	font-size: 40px;
+  }
+
+
+  .ix-cult-section-content button {
+		font-size: 16px;
+		padding: 10px 20px;
+   }
+}
+
+@media (max-width: 925px) {
+	.index-slider-section {
+		grid-template-columns: repeat(2, 1fr);
+		padding: 50px;
+	}
+
+	.index-slider-item {
+  		aspect-ratio: 1 / 1;
+  }
+
+}
+
+
+@media (max-width: 875px) {
+
+   /* Culture and History Responsive */
+
+  .ix-cult-section-content h1 {
+  	font-size: 35px;
+  }
+
+  /* Activities */
+
+  .ix-activities-content-1 h3 {
+		font-size: 22px;
+	}
+
+
+
+}
+@media (max-width: 840px) {
+	.navbar {
+		display: none;
+	}
+
+	.account {
+		display: none;
+	}
+
+	.Hamburger-Menu {
+		display: flex;
+	}
+
+  .hero-first-layout {
+  	width: 100%;
+  	align-items: center;
+  	justify-content: center;
+  }
+
+  .hero-title {
+  	gap: 25px;
+  	align-items: center;
+  	justify-content: center;
+  }
+
+  .hero-title h3 {
+  	font-size: 55px;
+  	text-align: center;
+  }
+
+  .hero-title p {
+  	font-size: 17px;
+  	text-align: center;
+  	width: 100%;
+  	margin-left: 0;
+  }
+
+     .hero-btn {
+        height: 55px; 
+        width: 180px;
+    }
+
+    .hero-btn-text {
+        font-size: 15px; 
+        left: 28%; 
+        width: 62%;
+    }
+
+    .hero-btn-arrow {
+        left: 18px;
+        height: 13px; 
+        width: 13px;
+    }
+
+    .hero-btn:hover .hero-btn-arrow {
+		left: 30px;
+	}
+
+  .hero-second-layout {
+  	display: none;
+  }
+
+  .hamb-logo {
+  	margin-top: 15px;
+  }
+
+  /* Sub Footer */
+
+  .sub-footer h1 {
+  	text-align: center;
+  	width: 65%;
+  }
+
+  /* Culture and History Responsive */
+
+  .ix-cult-section-img {
+  	display: none;
+  }
+
+  .ix-cult-section-content button {
+	font-size: 18px;
+	padding: 14px 24px;
+  }
+
+
+  .ix-cult-section-content h1 {
+	font-size: 50px;
+   }
+
+  .ix-cult-section-content {
+  	width: 100%;
+  }
+
+  /* Destinations responsive */
+
+  .index-destinations-section {
+  	height: 90vh;
+  }
+
+  .index-dest-title h1 {
+	font-size: 45px;
+  }
+ .index-dest-content {
+	width: 100%;
+  }
+
+  .index-dest-item {
+  	height: 75%;
+  }
+
+}
+
+@media (max-width: 800px) {
+
+	/* Activities */
+
+	.index-activities-item {
+		grid-column: 1 / -1;
+	}
+
+
+}
+
+@media (max-width: 685px) {
+.index-slider-section {
+	display: flex;
+	flex-direction: row;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scroll-behavior: smooth;
+		gap: 1.5rem;
+		padding: 1rem;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	.index-slider-item {
+		flex: 0 0 70%;
+	}
+
+   /* Destinations responsive */
+
+   .index-destinations-section {
+   	height: 110vh;
+   }
+
+   .index-dest-title {
+   	height: 10%;
+   }
+
+   .index-dest-item {
+   	height: 45%;
+   	width: 65%;
+   	gap: 10px;
+   }
+
+  .index-dest-title h1 {
+	font-size: 35px;
+  }
+
+  .index-dest-content {
+		width: 100%;
+		height: 90%;
+		flex-direction: column;
+		justify-content: space-evenly;
+	  }
+	}		
+
+@media (max-width: 630px) {
+	/*hero*/
+  .hero-title h3 {
+  	font-size: 40px;
+  	text-align: center;
+  }
+
+  /* Culture and History Responsive */
+
+   .ix-cult-section-content h1 {
+   	font-size: 40px;
+   }
+
+  /* Sub Footer */
+
+  .sub-footer h1 {
+  	font-size: 23px;
+  	width: 75%;
+  }
+
+
+   /* Destinations responsive */
+
+  .index-dest-title h1 {
+	font-size: 30px;
+  }
+
+   .index-dest-item {
+   	width: 70%;
+   	gap: 10px;
+   }
+
+
+}
