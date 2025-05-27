@@ -1521,13 +1521,36 @@ nav a:hover:before {
   }
   /* Activities */
 	.ix-activities-content-1 h3 {
-		font-size: 15px;
+		height: 15%;
+		font-size: 16px;
 	}
 
 
 	 .index-activities-design-2 h3 {
-		font-size: 15px;
+		height: 15%;
+		font-size: 16px;
  	 }
+
+	.ix-activities-content-1 i {
+	  
+		font-size: 14px;
+	}
+
+	 .index-activities-design-2 i {
+	font-size: 14px;
+  }
+
+.ix-activities-content-1 button {
+	
+	font-size: 11px;
+	padding: 7px 4px;
+	
+}
+ .index-activities-design-2 button {
+  	font-size: 11px;
+  	padding: 7px 4px;
+  }
+
 
   /* Sub Footer */
 
