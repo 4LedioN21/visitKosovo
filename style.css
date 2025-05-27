@@ -1519,6 +1519,15 @@ nav a:hover:before {
   .hamb-logo {
   	margin-top: 15px;
   }
+  /* Activities */
+	.ix-activities-content-1 h3 {
+		font-size: 15px;
+	}
+
+
+	 .index-activities-design-2 h3 {
+		font-size: 15px;
+ 	 }
 
   /* Sub Footer */
 
@@ -1573,16 +1582,6 @@ nav a:hover:before {
 	.index-activities-item {
 		grid-column: 1 / -1;
 	}
-
-	.ix-activities-content-1 h3 {
-		font-size: 19px;
-	}
-
-
-	 .index-activities-design-2 h3 {
-		font-size: 19px;
- 	 }
-
 
 }
 
